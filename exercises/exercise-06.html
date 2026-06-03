@@ -85,12 +85,12 @@
             </ol>
 
             <div class="instructions-block">
-                Thanks you for ordering a cake from Sweet Bakery!
+Thanks you for ordering a cake from Sweet Bakery!
 
-                We have recived your order for a @{triggerBody()?['text']}
-                @{triggerBody()?['text_1']}
+We have recived your order for a @{triggerBody()?['text']}
+@{triggerBody()?['text_1']}
 
-                For pickup: @{triggerBody()?['date']}
+For pickup: @{triggerBody()?['date']}
             </div>
 
             <div class="result-image">
@@ -157,11 +157,13 @@ After successfully creating the record, briefly confirm:
 - The customer name
 - The pickup date
 
-Do not expose internal table names, field names, choice values, or other technical implementation details to the user.
+Do not expose internal table names, field names, choice values, or other technical implementation
+details to the user.
 
 ## Confirmation Email Flow
 
-After a cake order has been created, ask the user if they would like to receive a confirmation email call the confirmation email flow.
+After a cake order has been created, ask the user if they would like to receive a confirmation email
+call the confirmation email flow.
 
 If the user says no, do not call the flow. Politely wish them a good day.
 
@@ -208,6 +210,36 @@ Yes please
                 <p class="image-caption">Expected result (With other data)</p>
                 <img src="../assets/images/Exc6_Step7.png">
             </div>
+
+            <h3>Troubleshooting: Connection required</h3>
+
+            <p>
+                The first time you use the flow from the agent, Copilot Studio may ask you
+                to verify the connection. This usually means the connection exists, but needs
+                to be refreshed or confirmed before the flow can run.
+            </p>
+
+            <ol>
+                <li>Click <strong>Open connection manager</strong>.</li>
+                <li>Find the connection used by the flow.</li>
+                <li>Check that the status is <strong>Connected</strong>.</li>
+                <li>If needed, click <strong>Manage</strong> and sign in again.</li>
+                <li>Click <strong>Refresh</strong>.</li>
+                <li>Go back to the agent and click <strong>Retry</strong>.</li>
+            </ol>
+
+            <div class="result-image compact">
+                <p class="image-caption">Connection prompt shown in the agent</p>
+                <img src="../assets/images/Exc6_Stepx-t.png"
+                    alt="Connection prompt asking the user to open connection manager">
+            </div>
+
+            <div class="result-image compact">
+                <p class="image-caption">Connection manager with connected flow connection</p>
+                <img src="../assets/images/Exc6_Stepx-t2.png"
+                    alt="Connection manager showing connected Dataverse and flow connections">
+            </div>
+
         </section>
 
         <section class="checkpoint-card">

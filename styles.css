@@ -181,6 +181,10 @@ code {
   transform: translateY(-1px);
 }
 
+.workshop-link {
+  margin-top: 16px;
+}
+
 .page-actions {
   display: flex;
   justify-content: space-between;
@@ -207,4 +211,34 @@ code {
     margin: 0;
     color: #78350f;
     line-height: 1.6;
+}
+
+.setup-callout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-left: 6px solid #2563eb;
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+}
+
+.setup-callout h2 {
+  margin: 0 0 6px;
+  color: #1e3a8a;
+}
+
+.setup-callout p {
+  margin: 0;
+  color: #4b5563;
+}
+
+@media (max-width: 700px) {
+  .setup-callout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
