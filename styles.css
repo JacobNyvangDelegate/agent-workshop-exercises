@@ -12,11 +12,44 @@ body {
 }
 
 .hero {
-    background: white;
-    padding: 48px;
-    border-radius: 24px;
-    margin-bottom: 32px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  background: white;
+  padding: 48px;
+  border-radius: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-with-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero-with-logo .hero-content {
+  max-width: 720px;
+}
+
+.hero-with-logo .hero-logo {
+  width: 260px;
+  max-width: 30%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .hero-with-logo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-with-logo .hero-logo {
+    max-width: 220px;
+  }
 }
 
 .eyebrow {
@@ -241,4 +274,8 @@ code {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.workshop-purpose {
+  margin-bottom: 32px;
 }
