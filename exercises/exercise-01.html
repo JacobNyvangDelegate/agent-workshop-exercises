@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 1 - Getting Started</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+    <main class="page">
+        <a class="back-link" href="../index.html">← Back to exercises</a>
+
+        <section class="hero">
+            <p class="eyebrow">Lab 1 · ~45 minutes</p>
+            <h1>Getting Started: Your First Bakery Agent</h1>
+            <p>
+                SweetBite Bakery staff get lots of calls about opening hours and bread types.
+                Let’s create the bakery’s first agent to help customers.
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2>🥖 What you’ll do</h2>
+            <ul>
+                <li>Create a new agent</li>
+                <li>Set its name, description, and icon</li>
+                <li>Turn on <strong>Generative AI orchestration</strong></li>
+                <li>Change the welcome message</li>
+                <li>Add bakery knowledge using a website</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 1: Create a new agent</h2>
+            <ol>
+                <li>Open <a href="https://copilotstudio.microsoft.com/" target="_blank">Copilot Studio</a>.</li>
+                <li>In the left menu, click <strong>Agents</strong>.</li>
+                <li>Click <strong>+ Create blank Agent</strong> in the top-right corner.</li>
+                <li>
+                    In the creation wizard:
+                    <ul>
+                        <li>Select <strong>Agent Settings</strong>.</li>
+                        <li>
+                            Fill in:
+                            <ul>
+                                <li><strong>Name:</strong> SweetBite Bakery Assistant</li>
+                                <li><strong>Language:</strong> English</li>
+                                <li><strong>Solution:</strong> Leave as is.</li>
+                                <li><strong>Schema Name:</strong> Leave as is.</li>
+                                <li><strong>Team:</strong> Leave as is.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Click <strong>Create</strong>.</li>
+            </ol>
+        </section>
+
+        <section class="content-card">
+            <div class="step-header">
+                <h2>Step 2: Change Agent Details and Icon</h2>
+            </div>
+
+            <ol>
+                <li>
+                    In the Overview page, update the description:
+                    <div class="code-block">
+                        Helps with bakery recipes, opening hours, and staff policies
+                    </div>
+                </li>
+
+                <li>In the <strong>Select your agent's model</strong> ensure your are using <strong>GPT-5.3
+                        chat</strong> or newer.</li>
+
+
+                <li>Click <strong>Settings</strong> in the top-right corner.</li>
+
+                <li>In the left-hand menu, select <strong>Agent details</strong>.</li>
+
+                <li>
+                    Confirm the following:
+                    <ul>
+                        <li><strong>Name:</strong> SweetBite Bakery Assistant</li>
+                    </ul>
+                </li>
+
+                <li>
+                    Under <strong>Icon</strong>, click <strong>Change icon</strong>.
+                    <div class="code-block">
+                        /data/bakery-icon.png
+                    </div>
+                </li>
+
+                <li>Click <strong>Save</strong>.</li>
+            </ol>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc1_Step2.png"
+                    alt="Expected result after changing agent details and icon" />
+            </div>
+        </section>
+
+        <section class="content-card">
+            <div class="step-header">
+                <h2>Step 3: Enable Generative Orchestration</h2>
+            </div>
+
+            <ol>
+                <li>Still in <strong>Settings</strong>, click <strong>Generative AI</strong>.</li>
+
+                <li>
+                    Under <strong>Orchestration</strong>, select:
+                    <div class="success-box">
+                        ✅ <strong>Yes</strong> – Responses will be dynamic, using available tools and knowledge as
+                        appropriate.
+                    </div>
+                </li>
+
+                <li>Close the settings window on the X in the top right</li>
+                <li>Click <strong>Save</strong>.</li>
+            </ol>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 4: Change the welcome message</h2>
+
+            <ol>
+                <li>Go to <strong>Topics</strong> (top navigation).</li>
+
+                <li>
+                    Under <strong>System topics</strong>, open
+                    <strong>Conversation Start</strong>.
+                </li>
+
+                <li>
+                    On the canvas, edit the first <strong>Message</strong> node and
+                    replace the text with:
+                </li>
+            </ol>
+
+            <div class="code-block">
+                Hello and welcome to SweetBite Bakery! 🥐
+
+                I can help you with opening hours, recipes, and staff rules.
+
+                What would you like to know today?
+            </div>
+
+            <ul>
+                <li>Click <strong>Save</strong>.</li>
+                <li>Test the agent using the <strong>Test</strong> button.</li>
+            </ul>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc1_Step4.png" alt="Welcome message configured in Conversation Start">
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 5: Add bakery knowledge (website)</h2>
+
+            <ol>
+                <li>Go to <strong>Overview</strong>.</li>
+                <li>Scroll to <strong>Knowledge</strong>.</li>
+                <li>Click <strong>+ Add knowledge</strong>.</li>
+                <li>
+                    Select <strong>File Upload</strong>.
+                    <br>
+                    We use file upload because we do not have a live website URL with the information.
+                </li>
+                <li>
+                    Upload the file:
+                    <div class="code-block">/data/Supplier_FAQ.html</div>
+                </li>
+                <li>Click <strong>Add</strong> and wait for indexing.</li>
+            </ol>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 6: Test your agent</h2>
+
+            <p>
+                Use the <strong>Test your agent</strong> panel. Try prompts like:
+            </p>
+
+            <ul>
+                <li>“When are you open?”</li>
+                <li>“Do you sell gluten-free bread?”</li>
+                <li>“Where can I buy ingredients for cakes?”</li>
+            </ul>
+        </section>
+
+        <section class="checkpoint-card">
+            <h2>🎯 Checkpoint</h2>
+
+            <ul class="checkpoint-list">
+                <li>✅ Created <strong>SweetBite Bakery Assistant</strong></li>
+                <li>✅ Updated description and icon</li>
+                <li>✅ Turned on orchestration</li>
+                <li>✅ Customized welcome message</li>
+                <li>✅ Added website knowledge</li>
+                <li>✅ Tested in chat and demo site</li>
+            </ul>
+        </section>
+
+        <div class="page-actions">
+            <a class="back-link" href="../index.html">← Back to exercises</a>
+            <a class="back-link" href="../Self-checkup/Selfcheckup-01.html">Go to self-check →</a>
+        </div>
+    </main>
+</body>
+
+</html>

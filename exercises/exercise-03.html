@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 2 - Adding Knowledge</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+    <main class="page">
+        <a class="back-link" href="../index.html">← Back to exercises</a>
+
+        <section class="hero">
+            <p class="eyebrow">Lab 3 · ~60 minutes</p>
+            <h1>Topics Mode: Designing Bakery Conversations</h1>
+            <p>
+                SweetBite Bakery doesn’t just want Q&A. They want the assistant to guide
+                customers and staff through structured processes. In orchestration mode,
+                topics are created with descriptions rather than trigger phrases.
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2>🥐 What you'll do</h2>
+
+            <ul>
+                <li>Create a topic for cake orders (guided flow)</li>
+                <li>Create a topic for employee leave requests (branching)</li>
+                <li>Save and reuse variables from user input</li>
+                <li>Add message variations</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 1: Create a topic for cake orders</h2>
+
+            <ol>
+                <li>Go to <strong>Topics</strong>.</li>
+                <li>Click <strong>+ Add a topic</strong>.</li>
+                <li>
+                    Fill in:
+                    <ul>
+                        <li><strong>Name:</strong> Cake Order</li>
+                        <li>
+                            <strong>Description:</strong>
+                            Guide customers through ordering cakes, including type of cake and pickup date.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    On the canvas:
+                    <ul>
+                        <li>
+                            Add <strong>Ask a question</strong> →
+                            <em>What kind of cake would you like?</em>
+                        </li>
+                        <li>Options: Chocolate, Strawberry, Custom</li>
+                        <li>Save as <strong>CakeType</strong></li>
+
+                        <li>
+                            Add <strong>Ask a question</strong> →
+                            <em>When do you need the cake?</em>
+                        </li>
+                        <li>Identify: Date</li>
+                        <li>Save as <strong>PickupDate</strong></li>
+                    </ul>
+                </li>
+
+                <li>
+                    Add a message node using the variables:
+                    <ul>
+                        <li>Insert variable → CakeType</li>
+                        <li>Insert variable → PickupDate</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <div class="code-block">
+                Thank you! Your {CakeType} cake will be ready on {PickupDate}. 🎂
+            </div>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc3_Step1.png" alt="Cake order topic configured">
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 2: Create a topic for employee leave requests</h2>
+
+            <ol>
+                <li>Go to <strong>Topics</strong>.</li>
+                <li>Click <strong>+ Add a topic</strong>.</li>
+
+                <li>
+                    Fill in:
+                    <ul>
+                        <li><strong>Name:</strong> Leave Request</li>
+                        <li>
+                            <strong>Description:</strong>
+                            Help employees request different types of leave.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    Add a question:
+                    <ul>
+                        <li><em>What type of leave are you requesting?</em></li>
+                        <li>Options: Holiday, Sick, Other</li>
+                        <li>Save as <strong>LeaveType</strong></li>
+                    </ul>
+                </li>
+
+                <li>
+                    Add branches:
+                    <ul>
+                        <li>Holiday → Ask number of days (LeaveDays)</li>
+                        <li>Sick → Ask start date (SickStartDate)</li>
+                        <li>Other → Ask reason (OtherReason)</li>
+                    </ul>
+                </li>
+
+                <li>Add a confirmation message.</li>
+            </ol>
+
+            <div class="code-block">
+                Thank you. Your {LeaveType} request for {LeaveDays} days has been noted.
+            </div>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc3_Step2.png" alt="Leave request topic configured">
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 3: Add a message variation</h2>
+
+            <ol>
+                <li>Open the <strong>Cake Order</strong> topic.</li>
+                <li>Select the final <strong>Message</strong> node.</li>
+                <li>Add a message variation.</li>
+            </ol>
+
+            <div class="code-block">
+                Great choice! We'll prepare your {CakeType} cake by {PickupDate}.
+            </div>
+
+            <ol start="4">
+                <li>Save and test.</li>
+            </ol>
+
+            <div class="result-image">
+                <p class="image-caption">Message Variation </p>
+                <img src="../assets/images/Exc3_Step3.png" alt="Message variation configured">
+            </div>
+        </section>
+
+        <section class="checkpoint-card">
+            <h2>🎯 Checkpoint</h2>
+
+            <ul class="checkpoint-list">
+                <li>✅ Created Cake Order topic with variables</li>
+                <li>✅ Created Leave Request topic with branching</li>
+                <li>✅ Added a message variation</li>
+            </ul>
+        </section>
+        <div class="page-actions">
+            <a class="back-link" href="../index.html">← Back to exercises</a>
+            <a class="back-link" href="../Self-checkup/Selfcheckup-03.html">Go to self-check →</a>
+        </div>
+    </main>
+</body>
+
+</html>

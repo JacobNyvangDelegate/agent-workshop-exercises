@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 2 - Adding Knowledge</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+    <main class="page">
+        <a class="back-link" href="../index.html">← Back to exercises</a>
+
+        <section class="hero">
+            <p class="eyebrow">Lab 2 · ~20 minutes</p>
+            <h1>Adding Knowledge: Recipes, Rules, and Reviews</h1>
+            <p>
+                SweetBite Bakery wants the agent to handle recipes, allergens, HR rules,
+                and customer feedback. You’ll upload bakery PDFs and a customer reviews
+                page to expand its knowledge.
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2>🥐 What you’ll do</h2>
+            <ul>
+                <li>Upload PDFs to the knowledge base</li>
+                <li>Test generative answers across multiple sources</li>
+                <li>Add customer reviews as an unstructured source</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 1: Upload bakery documents</h2>
+
+            <ol>
+                <li>Go to <strong>Overview</strong>.</li>
+                <li>Scroll to <strong>Knowledge</strong>.</li>
+                <li>Click <strong>+ Add knowledge</strong>.</li>
+                <li>Choose <strong>File upload</strong>.</li>
+                <li>
+                    Upload from <strong>/data</strong>:
+                    <ul>
+                        <li>SweetBite_RecipeBook.pdf</li>
+                        <li>SweetBite_AllergenPolicy.pdf</li>
+                        <li>SweetBite_StaffHandbook.pdf</li>
+                    </ul>
+                </li>
+                <li>Add short descriptions.</li>
+                <li>Wait for indexing.</li>
+            </ol>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc2_Step1.png" alt="Knowledge section with uploaded bakery PDFs">
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 2: Test with multiple knowledge sources</h2>
+
+            <p>Ask your agent:</p>
+
+            <ul>
+                <li>“Give me the recipe for chocolate cake.”</li>
+                <li>“What allergens are in croissants?”</li>
+                <li>“How do I request vacation days as a baker?”</li>
+            </ul>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc2_Step2.png" alt="Test your agent panel showing PDF-based answer">
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 3: Add customer reviews</h2>
+
+            <p>
+                Now let’s add some messy content to see how generative AI handles it.
+            </p>
+
+            <ol>
+                <li>
+                    Go back to <strong>Overview</strong> &gt; <strong>Knowledge</strong>
+                    &gt; <strong>+ Add knowledge</strong>.
+                </li>
+                <li>Choose <strong>File upload</strong>.</li>
+                <li>
+                    Upload:
+                    <div class="code-block">SweetBite_CustomerReviews.html</div>
+                </li>
+                <li>
+                    Description:
+                    <div class="code-block">Customer reviews and ratings from bakery website.</div>
+                </li>
+                <li>Save and wait for indexing.</li>
+            </ol>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 4: Test with reviews included</h2>
+
+            <p>
+                Ask your agent questions that rely on <strong>opinions</strong> instead of rules:
+            </p>
+
+            <ul>
+                <li>“What do customers think about the croissants?”</li>
+                <li>“Have people mentioned anything about gluten-free options?”</li>
+                <li>“How do customers feel about the staff?”</li>
+            </ul>
+        </section>
+
+        <section class="checkpoint-card">
+            <h2>🎯 Checkpoint</h2>
+
+            <ul class="checkpoint-list">
+                <li>✅ Added 3 bakery PDFs</li>
+                <li>✅ Added unstructured customer reviews file</li>
+                <li>✅ Tested recipe, allergen, HR queries, and customer opinions</li>
+            </ul>
+        </section>
+
+        <div class="page-actions">
+            <a class="back-link" href="../index.html">← Back to exercises</a>
+            <a class="back-link" href="../Self-checkup/Selfcheckup-02.html">Go to self-check →</a>
+        </div>
+    </main>
+</body>
+
+</html>

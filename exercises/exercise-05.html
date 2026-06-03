@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5 - Dataverse MCP</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+    <main class="page">
+        <div class="page-actions">
+            <a class="back-link" href="../index.html">← Back to exercises</a>
+        </div>
+
+        <section class="hero">
+            <p class="eyebrow">Lab 5 · ~45 minutes</p>
+            <h1>Working with Business Data using Dataverse MCP</h1>
+            <p>
+                SweetBite Bakery wants to store cake orders in Dataverse instead of
+                only discussing them in chat. In this lab, you'll connect your agent
+                to Dataverse and create real business records using MCP.
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2>🥐 What you'll do</h2>
+
+            <ul>
+                <li>Create a Dataverse table for cake orders</li>
+                <li>Add the Dataverse MCP tool</li>
+                <li>Configure order creation instructions</li>
+                <li>Create cake orders through chat</li>
+                <li>Verify records in Dataverse</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 1: Add the Dataverse MCP tool to our agent</h2>
+
+            <ol>
+                <li>Go to <strong>Tools</strong> in the top menu.</li>
+                <li>Select <strong>+ Add a tool</strong>.</li>
+                <li>In the search bar, type <strong>Dataverse</strong>.</li>
+                <li>Filter by <strong>Model Context Protocol</strong>.</li>
+                <li>Choose the connector action that says: <strong>Provides Remote MCP Server access to
+                        Dataverse</strong>.</li>
+                <li>If you are not already connected, create a new connection.</li>
+                <li>Select <strong>Add and configure</strong>.</li>
+            </ol>
+
+            <div class="result-image">
+                <p class="image-caption">Add connection</p>
+                <img src="../assets/images/Exc5_Step1.png" alt="Cake Orders table created in Dataverse">
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 2: Disable the Cake order and fallback topics</h2>
+
+
+            <ol>
+                <li>Go to <strong>Topics</strong>.</li>
+                <li>Find the <strong>Cake Order</strong> topic.</li>
+                <li>Turn off the <strong>Cake Order</strong> topic.</li>
+                <li>Find the <strong>Fallback</strong> topic.</li>
+                <li>Turn off the <strong>Fallback</strong> topic.</li>
+            </ol>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc5_Step2.png" alt="Dataverse MCP tool added to the agent">
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Why do we turn off these topics?</strong>
+                <p>
+                    We turn off these topics because we are going to implement the same functionality using
+                    instructions.
+                    This makes the agent more dynamic in how it interacts with the user, instead of relying on fixed
+                    topic flows.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 3: Update instructions of the agent</h2>
+
+            <p>
+                The Dataverse MCP can access Dataverse data. To keep this lab focused,
+                instruct the agent to only use the Cake Orders table.
+            </p>
+
+            <ol>
+                <li>Open the agent instructions.</li>
+                <li>Add the following Dataverse MCP usage instructions.</li>
+            </ol>
+
+            <div class="instructions-block">
+## Cake Order Process
+
+When a user wants to order a cake, use the Dataverse MCP to create a new record in the context_cakeorder table.
+
+Do not only respond conversationally.
+
+### Required Fields
+
+The following fields must be populated before creating an order:
+
+- context_ordername
+- context_customername
+- context_cakechoice
+- context_pickupdate
+
+### Optional Fields
+
+- context_notes
+
+If required information is missing, ask follow-up questions before creating the record.
+
+---
+
+## Cake Order Data Questions
+
+When the user asks questions about existing cake orders, use the Dataverse MCP to retrieve data from the context_cakeorder table.
+
+This includes questions about:
+
+- How many orders have been placed
+- Showing or listing existing orders
+- Filtering by cake type
+- Filtering by pickup date
+- Finding the latest order
+- Summarizing orders
+- Analyzing order patterns
+
+Do not answer these questions from general knowledge or knowledge search.
+
+Always retrieve the relevant records from the context_cakeorder table before answering.
+
+### Example Questions
+
+- How many cake orders have been placed?
+- Show me all chocolate cake orders.
+- What is the latest cake order?
+- Which cake type is most popular?
+- Show me orders with special requests.
+
+---
+
+## Cake Choice Values
+
+The context_cakechoice field is a Choice field and must use the following numeric values:
+
+- Chocolate = 236150000
+- Vanilla = 236150001
+- Strawberry = 236150002
+
+Never use the text value. Always use the numeric choice value.
+
+---
+
+## Order Name Format
+
+Generate context_ordername using the following format:
+
+[Cake Type] Cake - [Customer Name]
+
+### Examples
+
+- Chocolate Cake - John Doe
+- Vanilla Cake - Jane Smith
+- Strawberry Cake - Peter Hansen
+
+---
+
+## Notes Handling
+
+If the user provides special requests, store them in context_notes.
+
+### Examples
+
+- Gluten free
+- Extra frosting
+- Happy birthday text
+
+If no special requests are provided, leave context_notes empty.
+
+---
+
+## Confirmation
+
+After successfully creating the record, briefly confirm:
+
+- The cake type
+- The customer name
+- The pickup date
+
+Do not expose internal table names, field names, choice values, or other technical implementation details to the user.
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Why do we need to update the instructions?</strong>
+                <p>
+                    The agent relies on instructions to know how to use the tools effectively. By providing detailed
+                    instructions, we ensure that the agent creates records in the correct format and with all the
+                    necessary information.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 4: Test the agent</h2>
+
+            <ol>
+                <li>Trigger the cake ordering process by saying: <strong>I want to order a cake</strong>.</li>
+                <li>Provide the necessary information when prompted.</li>
+                <li>Verify that the agent creates the order or asks follow-up questions if required information is
+                    missing.</li>
+            </ol>
+
+            <div class="result-image">
+                <p class="image-caption">Troubleshoot</p>
+                <img src="../assets/images/Exc5_Step4.png" alt="Cake order creation instructions added to the agent">
+            </div>
+
+            <div class="result-image">
+                <p class="image-caption">Troubleshoot</p>
+                <img src="../assets/images/Exc5_Step4-t.png" alt="Cake order creation instructions added to the agent">
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 5: Verify the Dataverse record</h2>
+
+            <ol>
+                <li>Open the <strong>Cake Orders</strong> table.</li>
+                <li>Open the table data.</li>
+                <li>Confirm that a new record was created.</li>
+                <li>Verify that the values match the conversation.</li>
+            </ol>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc5_Step5.png" alt="Cake order record created in Dataverse">
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 6: Explore the capabilities of the Dataverse MCP (Optional)</h2>
+
+            <p>
+                Now that the agent can create cake orders, try asking questions that require it to
+                retrieve and analyze information from Dataverse.
+            </p>
+
+            <h3>Suggested prompts</h3>
+
+            <ul>
+                <li>How many cake orders have been placed?</li>
+                <li>Show me all chocolate cake orders.</li>
+                <li>What is the latest cake order?</li>
+                <li>List all orders scheduled for pickup next week.</li>
+                <li>Which cake type is the most popular?</li>
+                <li>How many chocolate, vanilla, and strawberry cakes have been ordered?</li>
+                <li>Show me all orders that contain special requests.</li>
+                <li>Who has ordered the most cakes?</li>
+                <li>Summarize the current cake orders.</li>
+                <li>Analyze order trends and tell me what you observe.</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>💡 What is happening behind the scenes?</strong>
+                <p>
+                    The agent uses the Dataverse MCP to retrieve records from the Cake Orders table.
+                    It can then combine those records with the reasoning capabilities of the language
+                    model to search, summarize, compare, and analyze the data.
+                </p>
+            </div>
+        </section>
+
+        <section class="checkpoint-card">
+            <h2>🎯 Checkpoint</h2>
+
+            <ul class="checkpoint-list">
+                <li>✅ Added the Dataverse MCP tool</li>
+                <li>✅ Created a cake order through chat</li>
+                <li>✅ Verified the record in Dataverse</li>
+            </ul>
+        </section>
+
+        <div class="page-actions">
+            <a class="back-link" href="../index.html">← Back to exercises</a>
+            <a class="back-link" href="../Self-checkup/Selfcheckup-05.html">Go to self-check →</a>
+        </div>
+    </main>
+</body>
+
+</html>

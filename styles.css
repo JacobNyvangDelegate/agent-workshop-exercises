@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+.hero {
+    background: white;
+    padding: 48px;
+    border-radius: 24px;
+    margin-bottom: 32px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 13px;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 8px 0 16px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #4b5563;
+}
+
+.exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.exercise-card {
+    display: block;
+    background: white;
+    padding: 32px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e7eb;
+}
+
+.exercise-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.exercise-card span {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.exercise-card h2 {
+    margin: 12px 0 8px;
+}
+
+.result-image {
+    margin-top: 28px;
+}
+
+.result-image img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  background: white;
+}
+
+.image-caption {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+code {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-family: Consolas, monospace;
+    font-size: 0.95em;
+}
+
+.code-block {
+    margin-top: 10px;
+    padding: 14px 16px;
+    background: #eff6ff;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 10px;
+    font-family: Consolas, monospace;
+    font-size: 0.95rem;
+    overflow-x: auto;
+}
+
+.instructions-block {
+    margin-top: 10px;
+    padding: 14px 16px;
+    background: #eff6ff;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 10px;
+    font-family: Consolas, monospace;
+    font-size: 0.95rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+}
+
+.checkpoint-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 6px solid #22c55e;
+    padding: 32px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+}
+
+.checkpoint-card h2 {
+    margin-top: 0;
+    color: #166534;
+}
+
+.checkpoint-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checkpoint-list li {
+    padding: 10px 0;
+    font-size: 1.05rem;
+}
+
+.content-card {
+  background: white;
+  padding: 32px 36px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+  border: 1px solid #e5e7eb;
+}
+
+.content-card:not(:last-child) {
+  border-bottom: 4px solid #f3f4f6;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 10px 16px;
+  background: white;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  background: #eff6ff;
+  transform: translateY(-1px);
+}
+
+.page-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0 24px;
+}
+
+.info-box {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid #f59e0b;
+    background-color: #fffbeb;
+    border-radius: 0.5rem;
+}
+
+.info-box strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #92400e;
+}
+
+.info-box p {
+    margin: 0;
+    color: #78350f;
+    line-height: 1.6;
+}

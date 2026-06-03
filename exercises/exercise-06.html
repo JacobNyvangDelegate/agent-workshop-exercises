@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 6 - Agent Flows</title>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+    <main class="page">
+        <div class="page-actions">
+            <a class="back-link" href="../index.html">← Back to exercises</a>
+        </div>
+
+        <section class="hero">
+            <p class="eyebrow">Lab 6 · ~45 minutes</p>
+            <h1>Agent Flows - Sending a Confirmation Email</h1>
+            <p>
+                SweetBite Bakery wants to send customers a confirmation email after
+                a cake order has been created. In this lab, you'll add an Agent Flow
+                and teach the agent when to call it.
+            </p>
+        </section>
+
+        <section class="content-card">
+            <h2>🥐 What you'll do</h2>
+
+            <ul>
+                <li>Create an Agent Flow</li>
+                <li>Add flow input variables</li>
+                <li>Send a confirmation email</li>
+                <li>Update the agent instructions</li>
+                <li>Test the flow from the agent conversation</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 1: Create the Agent Flow</h2>
+
+            <ol>
+                <li>Go to <strong>Tools</strong>.</li>
+                <li>Select <strong>+ Add a tool</strong>.</li>
+                <li>Select <strong>New Agent Flow</strong>.</li>
+            </ol>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc6_Step1.png" alt="Cake Orders table created in Dataverse">
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 2: Add flow inputs</h2>
+
+            <ol>
+                <li>Press the <strong>When an agent calls the flow</strong> block</li>
+                <li>Add the following inputs to the flow:</li>
+
+
+                <ul>
+                    <li><strong>CakeType</strong> - Chocolate, Vanilla, or Strawberry</li>
+                    <li><strong>Notes</strong> - Special requests or notes</li>
+                    <li><strong>Pickup Date</strong> - The agreed pickup date</li>
+                </ul>
+            </ol>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc6_Step2.png" alt="Cake Orders table created in Dataverse">
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 3: Send the confirmation email</h2>
+
+            <ol>
+                <li>Under the <strong>When an agent calls the flow</strong> block, add an Outlook action to send an
+                    email <strong>Send an email(v2)</strong>.</li>
+                <li>Login with the same account you use for the agent.</li>
+                <li>Use your own email as the recipient.</li>
+                <li>Use <strong>Your cake order confirmation</strong> as the subject.</li>
+                <li>Use the flow inputs to build the email body.</li>
+            </ol>
+
+            <div class="instructions-block">
+                Thanks you for ordering a cake from Sweet Bakery!
+
+                We have recived your order for a @{triggerBody()?['text']}
+                @{triggerBody()?['text_1']}
+
+                For pickup: @{triggerBody()?['date']}
+            </div>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc6_Step3.png">
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Explaination of the instruction box</strong>
+                <p>
+                    The following "@{triggerBody()?['text']}" syntax is used to reference the flow inputs in the email
+                    body. When the flow is called from the agent, these placeholders will be replaced with the actual
+                    values provided by the agent.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 4: publish the flow and give it a name</h2>
+
+            <ol>
+                <li>Press the publish button.</li>
+                <li>When prompted to go back to the agent or stay in the flow, select <strong>Stay in the flow</strong>.
+                </li>
+                <li>Press the Overview button.</li>
+                <li>Under Details press edit</li>
+                <li>Give the agent the name <strong>Confirmation mail flow</strong></li>
+                <li>Press save</li>
+                <li>Navigate back to the agent in the left menu</li>
+                <li>In your agent go to tools and ensure the flow is listed</li>
+                <li>If not, add it manually with <strong>+ Add a tool</strong> and choose Flow then the flow should be
+                    listed</li>
+            </ol>
+
+            <div class="result-image">
+                <p class="image-caption">Troubleshoot</p>
+                <img src="../assets/images/Exc6_Step4-t.png">
+            </div>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result</p>
+                <img src="../assets/images/Exc6_Step4.png">
+            </div>
+
+        </section>
+
+        <section class="content-card">
+            <h2>Step 6: Update the instructions</h2>
+
+            <p>
+                Add the following instructions to tell the agent when it should call
+                the confirmation email flow.
+            </p>
+            <p>
+                Do not replace the entire instruction, just add the following to the end of the existing instructions.
+            </p>
+
+            <div class="instructions-block">
+## Confirmation
+
+After successfully creating the record, briefly confirm:
+
+- The cake type
+- The customer name
+- The pickup date
+
+Do not expose internal table names, field names, choice values, or other technical implementation details to the user.
+
+## Confirmation Email Flow
+
+After a cake order has been created, ask the user if they would like to receive a confirmation email call the confirmation email flow.
+
+If the user says no, do not call the flow. Politely wish them a good day.
+
+### Flow Inputs
+
+When calling the flow, provide the following inputs:
+
+- CakeType: The selected cake type, for example Chocolate, Vanilla, or Strawberry
+- Notes: Any special requests or notes from the order. If no notes were provided, use an empty value
+- Pickup Date: The agreed pickup date in YYYY-MM-DD format
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Why do we update the instructions?</strong>
+                <p>
+                    The agent needs to know when the flow should be used. The flow should only
+                    be called if the customer wants a confirmation email and has provided an
+                    email address.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Step 7: Test the agent</h2>
+
+            <p>
+                Create a cake order and check that the agent asks whether the customer
+                wants a confirmation email.
+            </p>
+
+            <div class="instructions-block">
+I would like to order a chocolate cake for Sarah Johnson.
+Pickup date: 2026-06-28.
+Please write "Happy Birthday" on it.
+            </div>
+
+            <p>When the agent asks about a confirmation email, answer with:</p>
+
+            <div class="instructions-block">
+Yes please
+            </div>
+
+            <div class="result-image">
+                <p class="image-caption">Expected result (With other data)</p>
+                <img src="../assets/images/Exc6_Step7.png">
+            </div>
+        </section>
+
+        <section class="checkpoint-card">
+            <h2>🎯 Checkpoint</h2>
+
+            <ul class="checkpoint-list">
+                <li>✅ Created an Agent Flow</li>
+                <li>✅ Added flow inputs</li>
+                <li>✅ Updated the agent instructions</li>
+                <li>✅ Sent a confirmation email from the agent</li>
+            </ul>
+        </section>
+
+        <div class="page-actions">
+            <a class="back-link" href="../index.html">← Back to exercises</a>
+            <a class="back-link" href="../Self-checkup/Selfcheckup-06.html">Go to self-check →</a>
+        </div>
+    </main>
+</body>
+
+</html>
