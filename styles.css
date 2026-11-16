@@ -279,3 +279,376 @@ code {
 .workshop-purpose {
   margin-bottom: 32px;
 }
+/* Context& Agent In a Day navigation and self-checks */
+.page-nav,
+.pager {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.page-nav {
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.pager {
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.source-link {
+    color: #1d4ed8;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.source-link:hover {
+    text-decoration: underline;
+}
+
+.content-card ol,
+.content-card ul,
+.checkpoint ul {
+    padding-left: 24px;
+}
+
+.content-card li,
+.checkpoint li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.content-card code {
+    background: #eff6ff;
+    border-radius: 4px;
+    color: #1e3a8a;
+    padding: 2px 5px;
+}
+
+.check-list li {
+    margin-bottom: 18px;
+}
+
+@media (max-width: 640px) {
+    .page-nav,
+    .pager {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.checkpoint {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 6px solid #22c55e;
+    padding: 32px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+}
+
+.checkpoint h2 {
+    margin-top: 0;
+    color: #166534;
+}
+
+.pager .back-link,
+.page-nav .back-link {
+    margin-bottom: 0;
+}
+
+/* Exercise quiz */
+.unit-map a,
+.module-reference {
+    color: #1d4ed8;
+    font-weight: 700;
+}
+
+.module-reference {
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.quiz-form {
+    margin-bottom: 28px;
+}
+
+.quiz-form fieldset {
+    min-width: 0;
+}
+
+.quiz-form legend {
+    display: block;
+    max-width: 100%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.quiz-form label {
+    display: block;
+    margin: 12px 0;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.quiz-form input {
+    margin-right: 8px;
+}
+
+.quiz-feedback {
+    display: none;
+    margin: 18px 0 0;
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.quiz-correct {
+    border-color: #86efac;
+    background: #f0fdf4;
+}
+
+.quiz-correct .quiz-feedback {
+    display: block;
+    color: #166534;
+    background: #dcfce7;
+}
+
+.quiz-incorrect {
+    border-color: #fca5a5;
+    background: #fef2f2;
+}
+
+.quiz-incorrect .quiz-feedback {
+    display: block;
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+.quiz-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 28px 0;
+}
+
+.quiz-actions button {
+    border: 0;
+    border-radius: 999px;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    padding: 12px 20px;
+}
+
+.quiz-actions button:hover {
+    background: #1d4ed8;
+}
+
+.quiz-actions p {
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Keep quiz question headings inside their cards rather than in the fieldset border. */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.quiz-form fieldset {
+    border: 1px solid #e5e7eb;
+}
+
+.quiz-form .quiz-question {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0 0 18px;
+}
+
+.quiz-form legend:not(.visually-hidden) {
+    display: none;
+}
+/* Primary external-learning links */
+.primary-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.primary-link:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Setup download callout */
+.download-callout {
+    align-items: center;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 14px;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    margin: 20px 0 24px;
+    padding: 20px 22px;
+}
+
+.download-callout p {
+    margin: 0;
+}
+
+.download-callout .download-label {
+    color: #1d4ed8;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.download-callout .primary-link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.setup-steps {
+    margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .download-callout {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .download-callout .primary-link {
+        width: 100%;
+    }
+}
+
+/* Exercise 1: clean learning-module layout */
+.exercise-one-page {
+    max-width: 1040px;
+}
+
+.exercise-one-page .hero {
+    box-shadow: none;
+    border: 1px solid #e5e7eb;
+    padding: 42px 46px;
+}
+
+.exercise-one-page .hero h1 {
+    margin-bottom: 12px;
+}
+
+.exercise-overview,
+.learn-callout,
+.exercise-completion {
+    margin-bottom: 24px;
+}
+
+.exercise-overview {
+    padding: 34px 40px;
+}
+
+.section-label {
+    color: #2563eb;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+}
+
+.exercise-overview h2,
+.learn-callout h2,
+.exercise-completion h2 {
+    margin: 0 0 10px;
+}
+
+.exercise-overview p:last-child,
+.learn-callout p:last-child,
+.exercise-completion p:last-child {
+    margin-bottom: 0;
+}
+
+.learn-callout {
+    align-items: center;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 6px solid #4f6bed;
+    border-radius: 20px;
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+    padding: 26px 34px;
+}
+
+.learn-callout h2 {
+    color: #1e3a8a;
+}
+
+.learn-callout .section-label {
+    color: #3159cf;
+}
+
+.learn-callout .primary-link {
+    flex: 0 0 auto;
+    min-width: 240px;
+    text-align: center;
+}
+
+.learn-callout .primary-link span {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.exercise-completion {
+    padding: 28px 40px;
+}
+
+.exercise-completion .section-label {
+    color: #15803d;
+}
+
+@media (max-width: 700px) {
+    .exercise-one-page .hero,
+    .exercise-overview,
+    .learn-callout,
+    .exercise-completion {
+        padding: 28px 24px;
+    }
+
+    .learn-callout {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .learn-callout .primary-link {
+        min-width: 0;
+        width: 100%;
+    }
+}

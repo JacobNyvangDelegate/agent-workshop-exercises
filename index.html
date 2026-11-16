@@ -1,93 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agent Workshop Exercises</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context&amp; Agent In a Day</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <main class="page">
-        <section class="hero hero-with-logo">
-            <div class="hero-content">
-                <p class="eyebrow">Copilot Studio Workshop</p>
-                <h1>Agent Building Exercises</h1>
-                <p>
-                    Use these exercises to design, build, and test your agent step by step.
-                </p>
-            </div>
+  <main class="page">
+    <section class="hero hero-with-logo">
+      <div class="hero-content">
+        <p class="eyebrow">Copilot Studio &amp; Microsoft 365 Copilot Workshop</p>
+        <h1>Context&amp; Agent In a Day</h1>
+        <p>A facilitated onsite workshop with four practical learning sessions, using the official Microsoft Learn Agent in a Day modules as the participant guide.</p>
+      </div>
+      <img class="hero-logo" src="assets/images/ContextAndLogo.png" alt="Context&amp; logo">
+    </section>
 
-            <img class="hero-logo" src="assets/images/ContextAndLogo.png" alt="Context& logo">
-        </section>
+    <section class="content-card workshop-purpose">
+      <h2>Workshop journey</h2>
+      <p>The workshop follows one focused demo flow: build declarative agents in Microsoft 365 Copilot Chat, create and ground a conversational agent in Copilot Studio, extend it with tools and an agent flow, then add an autonomous email trigger.</p>
+      <p>Each exercise corresponds to one Microsoft Learn module and includes one direct module reference plus a short self-check.</p>
+    </section>
 
-        <section class="content-card workshop-purpose">
-            <h2>Purpose of the workshop</h2>
-            <p>
-                The purpose of these exercises is to build a complete Copilot Studio agent
-                step by step. You will start with a simple assistant, add knowledge,
-                design structured conversations, connect to business data, and trigger
-                actions using flows.
-            </p>
+    <section class="setup-callout">
+      <div>
+        <h2>Start with setup</h2>
+        <p>Use the workshop account and solution supplied by your facilitator before beginning the four exercises.</p>
+      </div>
+      <a class="back-link" href="exercises/exercise-00.html">Open setup →</a>
+    </section>
 
-            <p>
-                By the end, you should understand how the core building blocks of an agent
-                work together: <strong>instructions</strong>, <strong>knowledge</strong>,
-                <strong>topics</strong>, <strong>Dataverse MCP</strong>, and
-                <strong>agent flows</strong>.
-            </p>
-        </section>
-
-        <section class="setup-callout">
-            <div>
-                <h2>Before you start</h2>
-                <p>
-                    Make sure you have completed the workshop setup before starting the exercises.
-                </p>
-            </div>
-
-            <a class="back-link" href="exercises/exercise-00.html">Go to setup →</a>
-        </section>
-
-        <section class="exercise-grid">
-            <a class="exercise-card" href="exercises/exercise-01.html">
-                <span>Exercise 01</span>
-                <h2>Define the Agent</h2>
-                <p>Clarify the problem, user, knowledge, and success criteria.</p>
-            </a>
-
-            <a class="exercise-card" href="exercises/exercise-02.html">
-                <span>Exercise 02</span>
-                <h2>Design the Conversation</h2>
-                <p>Map example questions, responses, and escalation paths.</p>
-            </a>
-
-            <a class="exercise-card" href="exercises/exercise-03.html">
-                <span>Exercise 03</span>
-                <h2>Topics Mode: Designing Bakery Conversations</h2>
-                <p>Create structured conversations using topics, variables, and branching.</p>
-            </a>
-
-            <a class="exercise-card" href="exercises/exercise-04.html">
-                <span>Exercise 04</span>
-                <h2>Generative Orchestration: Blending Knowledge and Topics</h2>
-                <p>Learn how to blend knowledge and topics for more dynamic conversations.</p>
-            </a>
-
-            <a class="exercise-card" href="exercises/exercise-05.html">
-                <span>Exercise 05</span>
-                <h2>Model Context Protocol: Have the Agent save Orders</h2>
-                <p>Learn how to have the agent create orders in Dataverse</p>
-            </a>
-
-            <a class="exercise-card" href="exercises/exercise-06.html">
-                <span>Exercise 06</span>
-                <h2>Agent flows: Send Confirmation Emails</h2>
-                <p>Learn how to trigger an Agent Flow from the conversation and send order confirmations.</p>
-            </a>
-        </section>
-    </main>
+    <section class="exercise-grid">
+      <a class="exercise-card" href="exercises/exercise-01.html"><span>Exercise 01</span><h2>Build Agents in Copilot Chat</h2><p>Explore Copilot Chat, create an agent from a template, and build a custom customer-support agent.</p></a>
+      <a class="exercise-card" href="exercises/exercise-02.html"><span>Exercise 02</span><h2>Build a Conversational Agent in Copilot Studio</h2><p>Set up the environment, create an agent, tour the authoring experience, and add knowledge.</p></a>
+      <a class="exercise-card" href="exercises/exercise-03.html"><span>Exercise 03</span><h2>Use Tools in Copilot Studio</h2><p>Create a custom prompt tool and an order-cancellation agent flow.</p></a>
+      <a class="exercise-card" href="exercises/exercise-04.html"><span>Exercise 04</span><h2>Make Your Agent Autonomous</h2><p>Add and safely test an autonomous email trigger in Copilot Studio.</p></a>
+    </section>
+  </main>
 </body>
-
 </html>

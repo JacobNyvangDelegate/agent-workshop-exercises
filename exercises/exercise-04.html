@@ -1,143 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="da">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 4 - Generative Orchestration</title>
-    <link rel="stylesheet" href="../styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 04 | Context&amp; Agent In a Day</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
-
 <body>
-    <main class="page">
-        <a class="back-link" href="../index.html">← Back to exercises</a>
+  <main class="page exercise-one-page">
+    <nav class="page-nav">
+      <a class="back-link" href="../index.html">← Alle øvelser</a>
+      <a class="source-link" href="https://learn.microsoft.com/en-us/training/modules/autonomous-agents-online-workshop/" target="_blank" rel="noopener">Åbn hele Microsoft Learn-modulet ↗</a>
+    </nav>
 
-        <section class="hero">
-            <p class="eyebrow">Lab 4 · ~30 minutes</p>
-            <h1>Generative Orchestration: Blending Knowledge and Topics</h1>
-            <p>
-                Sometimes customers ask questions that don't fit your topics.
-                With orchestration, the agent can fall back on knowledge sources
-                while still reusing variables collected earlier in the conversation.
-            </p>
-        </section>
+    <section class="hero">
+      <p class="eyebrow">Exercise 04 · Microsoft Copilot Studio</p>
+      <h1>Make Your Agent Autonomous</h1>
+      <p>Følg den officielle Microsoft Learn-guide for at forstå autonomous triggers og gøre en Copilot Studio-agent i stand til at reagere på relevante e-mails.</p>
+    </section>
 
-        <section class="content-card">
-            <h2>🥐 What you'll do</h2>
+    <section class="content-card exercise-overview">
+      <p class="section-label">Hvad handler modulet om?</p>
+      <h2>Om Autonomous Agents i Copilot Studio</h2>
+      <p>Autonomous agents kan reagere på hændelser uden at vente på, at en bruger starter en samtale. Triggers og betingelser afgør, hvornår agenten må handle, og hvilke tools den kan bruge i processen.</p>
+      <p>I guiden lærer du om autonomous triggers, tilføjer Outlook-funktionalitet, opretter en e-mail-trigger og tester samt validerer agentens adfærd, før ændringerne publiceres.</p>
+    </section>
 
-            <ul>
-                <li>Create a fallback topic</li>
-                <li>Pass variables into a generative answer node</li>
-                <li>Test orchestration with context</li>
-            </ul>
-        </section>
+    <section class="learn-callout">
+      <div>
+        <p class="section-label">Næste skridt</p>
+        <h2>Følg Microsoft Learn-guiden</h2>
+        <p>Gennemfør hele modulet i Microsoft Learn i den angivne rækkefølge. Brug kun det workshop- eller testmiljø, som facilitatoren har angivet.</p>
+      </div>
+      <a class="primary-link" href="https://learn.microsoft.com/en-us/training/modules/autonomous-agents-online-workshop/" target="_blank" rel="noopener">Start modulet <span>på Microsoft Learn ↗</span></a>
+    </section>
 
-        <section class="content-card">
-            <h2>Step 1: Create a fallback topic with variable handoff</h2>
+    <section class="checkpoint exercise-completion">
+      <p class="section-label">Klar til næste del?</p>
+      <h2>Når du er færdig</h2>
+      <p>Du skal have konfigureret og testet en autonomous trigger med både en matchende og en ikke-matchende test-e-mail. Gennemgå agentens aktivitet, før workshopfacilitatoren introducerer den næste del.</p>
+    </section>
 
-            <ol>
-                <li>Go to <strong>Topics</strong> → <strong>+ Add a topic</strong>.</li>
-
-                <li>
-                    Fill in:
-                    <ul>
-                        <li><strong>Name:</strong> Fallback</li>
-                        <li>
-                            <strong>Description:</strong>
-                            Catch-all when no topic matches, including allergen questions.
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    Add a <strong>Message</strong> node:
-                    <ul>
-                        <li>Insert variable → <strong>CakeType</strong></li>
-                    </ul>
-
-                    <div class="code-block">
-                        Let me check my bakery knowledge about {CakeType} cakes for you...
-                    </div>
-                </li>
-
-                <li>
-                    Add a <strong>Generative answers</strong> node:
-                    <ul>
-                        <li>Click the + icon below the message node.</li>
-                        <li>Select <strong>Generative answers</strong> (Advanced).</li>
-                        <li>
-                            Enable:
-                            <ul>
-                                <li>✅ Allow the AI to use its own General Knowledge</li>
-                                <li>✅ All knowledge sources added earlier</li>
-                            </ul>
-                        </li>
-                        <li>
-                            In the instruction box enter:
-                            <div class="code-block">
-                                Keep the answer short and precise
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>Save the topic.</li>
-            </ol>
-
-            <div class="result-image">
-                <p class="image-caption">Expected result</p>
-                <img src="../assets/images/Exc4_Step1.png" alt="Fallback topic configured">
-            </div>
-        </section>
-
-        <section class="content-card">
-            <h2>Step 2: Test orchestration with variables</h2>
-
-            <ol>
-                <li>
-                    Trigger <strong>Cake Order</strong> and choose
-                    <strong>Chocolate</strong>.
-                </li>
-
-                <li>
-                    Ask:
-                    <div class="code-block">
-                        Does this cake contain gluten?
-                    </div>
-                </li>
-
-                <li>
-                    Verify:
-                    <ul>
-                        <li>The fallback topic is triggered.</li>
-                        <li>The CakeType variable is reused.</li>
-                        <li>The answer comes from the Allergen Policy PDF.</li>
-                    </ul>
-                </li>
-            </ol>
-
-            <div class="result-image">
-                <p class="image-caption">Expected result</p>
-                <img src="../assets/images/Exc4_Step2.png" alt="Orchestration using variables and knowledge">
-            </div>
-        </section>
-
-        <section class="checkpoint-card">
-            <h2>🎯 Checkpoint</h2>
-
-            <ul class="checkpoint-list">
-                <li>✅ Built fallback topic</li>
-                <li>✅ Inserted variable into orchestration handoff</li>
-                <li>✅ Tested orchestration using context and knowledge</li>
-            </ul>
-        </section>
-
-        <div class="page-actions">
-            <a class="back-link" href="../index.html">← Back to exercises</a>
-            <a class="back-link" href="../Self-checkup/Selfcheckup-04.html">Go to self-check →</a>
-        </div>
-
-    </main>
+    <nav class="pager">
+      <a class="back-link" href="../index.html">← Tilbage til workshopoversigten</a>
+    </nav>
+  </main>
 </body>
-
 </html>

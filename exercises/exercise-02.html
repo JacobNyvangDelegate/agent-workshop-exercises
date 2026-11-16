@@ -1,133 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="da">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 2 - Adding Knowledge</title>
-    <link rel="stylesheet" href="../styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 02 | Context&amp; Agent In a Day</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
-
 <body>
-    <main class="page">
-        <a class="back-link" href="../index.html">← Back to exercises</a>
+  <main class="page exercise-one-page">
+    <nav class="page-nav">
+      <a class="back-link" href="../index.html">← Alle øvelser</a>
+      <a class="source-link" href="https://learn.microsoft.com/en-us/training/modules/agents-copilot-studio-online-workshop/" target="_blank" rel="noopener">Åbn hele Microsoft Learn-modulet ↗</a>
+    </nav>
 
-        <section class="hero">
-            <p class="eyebrow">Lab 2 · ~20 minutes</p>
-            <h1>Adding Knowledge: Recipes, Rules, and Reviews</h1>
-            <p>
-                SweetBite Bakery wants the agent to handle recipes, allergens, HR rules,
-                and customer feedback. You’ll upload bakery PDFs and a customer reviews
-                page to expand its knowledge.
-            </p>
-        </section>
+    <section class="hero">
+      <p class="eyebrow">Exercise 02 · Microsoft Copilot Studio</p>
+      <h1>Build a Conversational Agent in Copilot Studio</h1>
+      <p>Følg den officielle Microsoft Learn-guide for at oprette en conversational agent, gennemgå Copilot Studio og grounde agentens svar med knowledge sources.</p>
+    </section>
 
-        <section class="content-card">
-            <h2>🥐 What you’ll do</h2>
-            <ul>
-                <li>Upload PDFs to the knowledge base</li>
-                <li>Test generative answers across multiple sources</li>
-                <li>Add customer reviews as an unstructured source</li>
-            </ul>
-        </section>
+    <section class="content-card exercise-overview">
+      <p class="section-label">Hvad handler modulet om?</p>
+      <h2>Om Conversational Agents i Copilot Studio</h2>
+      <p>Microsoft Copilot Studio gør det muligt at bygge conversational agents, der kan hjælpe brugere med konkrete opgaver og svare på spørgsmål med udgangspunkt i godkendte datakilder.</p>
+      <p>I guiden arbejder du med opsætning af miljøet, oprettelse af agenten, de centrale områder i Copilot Studio samt knowledge sources, der kan grounde agentens svar i forretningsdata og dokumenter.</p>
+    </section>
 
-        <section class="content-card">
-            <h2>Step 1: Upload bakery documents</h2>
+    <section class="learn-callout">
+      <div>
+        <p class="section-label">Næste skridt</p>
+        <h2>Følg Microsoft Learn-guiden</h2>
+        <p>Gennemfør hele modulet i Microsoft Learn i den angivne rækkefølge.</p>
+      </div>
+      <a class="primary-link" href="https://learn.microsoft.com/en-us/training/modules/agents-copilot-studio-online-workshop/" target="_blank" rel="noopener">Start modulet <span>på Microsoft Learn ↗</span></a>
+    </section>
 
-            <ol>
-                <li>Go to <strong>Overview</strong>.</li>
-                <li>Scroll to <strong>Knowledge</strong>.</li>
-                <li>Click <strong>+ Add knowledge</strong>.</li>
-                <li>Choose <strong>File upload</strong>.</li>
-                <li>
-                    Upload from <strong>/data</strong>:
-                    <ul>
-                        <li>SweetBite_RecipeBook.pdf</li>
-                        <li>SweetBite_AllergenPolicy.pdf</li>
-                        <li>SweetBite_StaffHandbook.pdf</li>
-                    </ul>
-                </li>
-                <li>Add short descriptions.</li>
-                <li>Wait for indexing.</li>
-            </ol>
+    <section class="checkpoint exercise-completion">
+      <p class="section-label">Klar til næste del?</p>
+      <h2>Når du er færdig</h2>
+      <p>Du skal have oprettet og testet en conversational agent i Copilot Studio samt tilføjet de knowledge sources, som guiden bruger. Herefter fortsætter workshoppen med den næste teori- eller øvelsesdel, som workshopfacilitatoren introducerer.</p>
+    </section>
 
-            <div class="result-image">
-                <p class="image-caption">Expected result</p>
-                <img src="../assets/images/EXC2_Step1.png" alt="Knowledge section with uploaded bakery PDFs">
-            </div>
-        </section>
-
-        <section class="content-card">
-            <h2>Step 2: Test with multiple knowledge sources</h2>
-
-            <p>Ask your agent:</p>
-
-            <ul>
-                <li>“Give me the recipe for chocolate cake.”</li>
-                <li>“What allergens are in croissants?”</li>
-                <li>“How do I request vacation days as a baker?”</li>
-            </ul>
-
-            <div class="result-image">
-                <p class="image-caption">Expected result</p>
-                <img src="../assets/images/EXC2_Step2.png" alt="Test your agent panel showing PDF-based answer">
-            </div>
-        </section>
-
-        <section class="content-card">
-            <h2>Step 3: Add customer reviews</h2>
-
-            <p>
-                Now let’s add some messy content to see how generative AI handles it.
-            </p>
-
-            <ol>
-                <li>
-                    Go back to <strong>Overview</strong> &gt; <strong>Knowledge</strong>
-                    &gt; <strong>+ Add knowledge</strong>.
-                </li>
-                <li>Choose <strong>File upload</strong>.</li>
-                <li>
-                    Upload:
-                    <div class="code-block">SweetBite_CustomerReviews.html</div>
-                </li>
-                <li>
-                    Description:
-                    <div class="code-block">Customer reviews and ratings from bakery website.</div>
-                </li>
-                <li>Save and wait for indexing.</li>
-            </ol>
-        </section>
-
-        <section class="content-card">
-            <h2>Step 4: Test with reviews included</h2>
-
-            <p>
-                Ask your agent questions that rely on <strong>opinions</strong> instead of rules:
-            </p>
-
-            <ul>
-                <li>“What do customers think about the croissants?”</li>
-                <li>“Have people mentioned anything about gluten-free options?”</li>
-                <li>“How do customers feel about the staff?”</li>
-            </ul>
-        </section>
-
-        <section class="checkpoint-card">
-            <h2>🎯 Checkpoint</h2>
-
-            <ul class="checkpoint-list">
-                <li>✅ Added 3 bakery PDFs</li>
-                <li>✅ Added unstructured customer reviews file</li>
-                <li>✅ Tested recipe, allergen, HR queries, and customer opinions</li>
-            </ul>
-        </section>
-
-        <div class="page-actions">
-            <a class="back-link" href="../index.html">← Back to exercises</a>
-            <a class="back-link" href="../Self-checkup/Selfcheckup-02.html">Go to self-check →</a>
-        </div>
-    </main>
+    <nav class="pager">
+      <a class="back-link" href="../index.html">← Tilbage til workshopoversigten</a>
+    </nav>
+  </main>
 </body>
-
 </html>
