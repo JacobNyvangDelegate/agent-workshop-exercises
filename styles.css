@@ -652,3 +652,42 @@ code {
         width: 100%;
     }
 }
+/* Setup video */
+.setup-video-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    overflow: hidden;
+}
+
+.setup-video-intro {
+    padding: 30px 34px 18px;
+}
+
+.setup-video-intro h2 {
+    margin: 0 0 10px;
+}
+
+.setup-video-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.setup-video {
+    background: #0f172a;
+    display: block;
+    max-height: 680px;
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .setup-video-intro {
+        padding: 24px 24px 16px;
+    }
+}
+
+.headset-icon {
+    font-size: 1.2em;
+    margin-right: 6px;
+    vertical-align: -0.08em;
+}
