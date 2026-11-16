@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,41 +9,123 @@
 <body>
   <main class="page exercise-one-page">
     <nav class="page-nav">
-      <a class="back-link" href="../index.html">← Alle øvelser</a>
-      <a class="source-link" href="https://learn.microsoft.com/en-us/training/modules/agents-copilot-studio-online-workshop/" target="_blank" rel="noopener">Åbn hele Microsoft Learn-modulet ↗</a>
+      <a class="back-link" href="../index.html">← All exercises</a>
+      <a class="source-link" href="https://learn.microsoft.com/en-us/training/modules/agents-copilot-studio-online-workshop/" target="_blank" rel="noopener">Open the full Microsoft Learn module ↗</a>
     </nav>
 
     <section class="hero">
       <p class="eyebrow">Exercise 02 · Microsoft Copilot Studio</p>
       <h1>Build a Conversational Agent in Copilot Studio</h1>
-      <p>Følg den officielle Microsoft Learn-guide for at oprette en conversational agent, gennemgå Copilot Studio og grounde agentens svar med knowledge sources.</p>
+      <p>Follow the official Microsoft Learn guide to create a conversational agent, explore Copilot Studio, and ground the agent's responses with knowledge sources.</p>
     </section>
 
     <section class="content-card exercise-overview">
-      <p class="section-label">Hvad handler modulet om?</p>
-      <h2>Om Conversational Agents i Copilot Studio</h2>
-      <p>Microsoft Copilot Studio gør det muligt at bygge conversational agents, der kan hjælpe brugere med konkrete opgaver og svare på spørgsmål med udgangspunkt i godkendte datakilder.</p>
-      <p>I guiden arbejder du med opsætning af miljøet, oprettelse af agenten, de centrale områder i Copilot Studio samt knowledge sources, der kan grounde agentens svar i forretningsdata og dokumenter.</p>
+      <p class="section-label">What is this module about?</p>
+      <h2>About Conversational Agents in Copilot Studio</h2>
+      <p>Microsoft Copilot Studio lets you build conversational agents that can help users with specific tasks and answer questions based on approved data sources.</p>
+      <p>In this guide, you will set up the environment, create the agent, explore the key areas of Copilot Studio, and use knowledge sources to ground the agent's responses in business data and documents.</p>
+    </section>
+
+    <section class="content-card exercise-overview">
+      <p class="section-label">Important update</p>
+      <h2>Use the provided instructions</h2>
+      <p>The Microsoft Learn exercise refers to an agent that was previously used to generate instructions. That agent is no longer available in Copilot Studio.</p>
+      <p>Instead, create the agent as described in the exercise, then copy the instructions below into the agent's <strong>Instructions</strong> field. Use them as the agent's instructions.</p>
+      <pre id="contoso-instructions" class="instructions-block"># Purpose
+Assist customers with Contoso Coffee machine orders by providing accurate, friendly, and professional responses based solely on approved Contoso sources.
+
+# General Guidelines
+- Tone: Be friendly, professional, approachable, and slightly curious. Use clear language and light emojis when appropriate.
+- Scope: Only answer questions related to Contoso Coffee products, machines, and machine orders.
+- Information Sources: Use only information from approved Contoso sources configured for this agent.
+- Public Information: Only provide information intended for public use. Never reveal confidential, internal, sensitive, or non-public information.
+- Accuracy: Do not guess, speculate, invent information, or rely on outside knowledge.
+- Restrictions: Do not provide information about products or topics outside the Contoso Coffee domain.
+
+# Skills
+- Help customers understand Contoso Coffee machines and products.
+- Assist with questions about machine orders and the ordering process.
+- Provide clear, concise answers based on approved sources.
+- Ask relevant follow-up questions when clarification is needed.
+- Maintain a helpful and professional customer experience.
+
+# Step-by-Step Instructions
+1. Identify the customer's question or goal.
+2. Confirm the request relates to Contoso Coffee machines, products, or machine orders.
+3. Use the approved Contoso sources to find relevant information.
+4. Respond only with information supported by those sources.
+5. If information is unavailable or cannot be verified, clearly say so. Never guess or make assumptions.
+6. If a request is outside the Contoso Coffee domain, politely explain the agent's scope and redirect the customer to supported topics.
+7. When appropriate, ask a concise follow-up question or suggest the next relevant step.</pre>
+      <div class="copy-instructions-actions">
+        <button class="copy-instructions" type="button" data-copy-target="contoso-instructions">Copy instructions</button>
+      </div>
+      <p id="copy-status" class="visually-hidden" aria-live="polite"></p>
     </section>
 
     <section class="learn-callout">
       <div>
-        <p class="section-label">Næste skridt</p>
-        <h2>Følg Microsoft Learn-guiden</h2>
-        <p>Gennemfør hele modulet i Microsoft Learn i den angivne rækkefølge.</p>
+        <p class="section-label">Next step</p>
+        <h2>Follow the Microsoft Learn guide</h2>
+        <p>Complete the full Microsoft Learn module in the stated order, using the instructions above instead of the retired instruction-generating agent.</p>
       </div>
-      <a class="primary-link" href="https://learn.microsoft.com/en-us/training/modules/agents-copilot-studio-online-workshop/" target="_blank" rel="noopener">Start modulet <span>på Microsoft Learn ↗</span></a>
+      <a class="primary-link" href="https://learn.microsoft.com/en-us/training/modules/agents-copilot-studio-online-workshop/" target="_blank" rel="noopener">Start the module <span>on Microsoft Learn ↗</span></a>
     </section>
 
     <section class="checkpoint exercise-completion">
-      <p class="section-label">Klar til næste del?</p>
-      <h2>Når du er færdig</h2>
-      <p>Du skal have oprettet og testet en conversational agent i Copilot Studio samt tilføjet de knowledge sources, som guiden bruger. Herefter fortsætter workshoppen med den næste teori- eller øvelsesdel, som workshopfacilitatoren introducerer.</p>
+      <p class="section-label">Ready for the next part?</p>
+      <h2>When you are finished</h2>
+      <p>You should have created and tested a conversational agent in Copilot Studio, added the Contoso Coffee instructions above, and included the knowledge sources used by the guide. The workshop facilitator will then introduce the next theory or exercise section.</p>
     </section>
 
     <nav class="pager">
-      <a class="back-link" href="../index.html">← Tilbage til workshopoversigten</a>
+      <a class="back-link" href="../index.html">← Back to the workshop overview</a>
     </nav>
   </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const copyButton = document.querySelector(".copy-instructions");
+      const status = document.querySelector("#copy-status");
+
+      if (!copyButton || !status) return;
+
+      const copyText = async (text) => {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return;
+        }
+
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.setAttribute("readonly", "");
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.select();
+        const wasCopied = document.execCommand("copy");
+        textArea.remove();
+
+        if (!wasCopied) throw new Error("Copy command was unsuccessful.");
+      };
+
+      copyButton.addEventListener("click", async () => {
+        const target = document.getElementById(copyButton.dataset.copyTarget);
+        if (!target) return;
+
+        const originalLabel = "Copy instructions";
+
+        try {
+          await copyText(target.textContent.trim());
+          copyButton.textContent = "Copied ✓";
+          status.textContent = "Instructions copied to the clipboard.";
+          window.setTimeout(() => { copyButton.textContent = originalLabel; }, 2500);
+        } catch (error) {
+          copyButton.textContent = "Copy failed";
+          status.textContent = "Unable to copy the instructions. Please select and copy the text manually.";
+          window.setTimeout(() => { copyButton.textContent = originalLabel; }, 2500);
+        }
+      });
+    });
+  </script>
 </body>
 </html>

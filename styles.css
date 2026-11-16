@@ -142,6 +142,32 @@ code {
     overflow-x: auto;
 }
 
+.copy-instructions-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+.copy-instructions {
+    background: #2563eb;
+    border: 0;
+    border-radius: 999px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font: inherit;
+    font-weight: 700;
+    padding: 10px 16px;
+}
+
+.copy-instructions:hover {
+    background: #1d4ed8;
+}
+
+.copy-instructions:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
 .instructions-block {
     margin-top: 10px;
     padding: 14px 16px;
